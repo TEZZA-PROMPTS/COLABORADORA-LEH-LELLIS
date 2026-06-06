@@ -12,7 +12,6 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="LEH LELLIS • TEZZA PROMPTS">
   <meta property="og:description" content="TEZZA PROMPTS OFICIAL">
-  <!-- Removendo imagem da prévia -->
   <meta property="og:image" content="">
   
   <!-- Twitter -->
@@ -38,17 +37,9 @@
     }
 
     @keyframes jaguar-enter-right {
-      0% {
-        transform: translateX(150%) scaleX(-1);
-        opacity: 0;
-      }
-      10% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateX(0) scaleX(-1);
-        opacity: 1;
-      }
+      0% { transform: translateX(150%) scaleX(-1); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateX(0) scaleX(-1); opacity: 1; }
     }
 
     .pulsing-star-img {
@@ -62,11 +53,7 @@
       filter: brightness(1.1) contrast(1.1);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       background-color: var(--bg-black);
@@ -82,8 +69,7 @@
     .bg-overlay {
       position: fixed;
       inset: 0;
-      background: 
-      linear-gradient(rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.85)),
+      background: linear-gradient(rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.85)),
       url('https://i.pinimg.com/1200x/fe/93/a4/fe93a4ab6527400803f3f69a629b79f1.jpg') center/cover no-repeat fixed;
       z-index: -2;
     }
@@ -103,7 +89,7 @@
       padding: 80px 20px;
       text-align: center;
       position: relative;
-      transition: opacity 0.8s ease; /* Transição suave para o conteúdo principal */
+      transition: opacity 0.8s ease; 
     }
 
     .luxury-title {
@@ -199,7 +185,6 @@
       box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
     }
 
-    /* TELA DE SUCESSO PERSISTENTE */
     .jaguar-transition {
       position: fixed;
       inset: 0;
@@ -212,7 +197,7 @@
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
-      transition: opacity 0.8s ease; /* Transição suave para sumir a tela de sucesso */
+      transition: opacity 0.8s ease; 
     }
 
     .jaguar-transition::before {
@@ -221,7 +206,6 @@
       inset: 0;
       background: rgba(0, 0, 0, 0.85); 
       backdrop-filter: blur(25px) saturate(150%);
-      -webkit-backdrop-filter: blur(25px) saturate(150%);
     }
 
     .transition-content {
@@ -235,11 +219,14 @@
       justify-content: center;
     }
 
+    /* AJUSTE PARA O EFEITO DE CHÃO: Margem negativa aproxima a onça do texto */
     .new-jaguar-gif {
       width: 450px;
       height: auto;
       animation: jaguar-enter-right 3.5s linear forwards;
-      margin-bottom: 30px;
+      margin-bottom: -15px; /* Puxa a onça para cima do texto */
+      position: relative;
+      z-index: 2;
     }
 
     .success-msg-container {
@@ -247,6 +234,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      position: relative;
+      z-index: 1;
     }
 
     .success-msg {
@@ -257,7 +246,7 @@
       background: linear-gradient(to bottom, var(--gold-light), var(--gold-dark));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 15px;
+      margin-bottom: 5px; /* Aproxima ainda mais do subtítulo */
     }
 
     .mention-msg {
@@ -272,27 +261,12 @@
       opacity: 0.9;
     }
 
-    footer {
-      margin-top: 80px;
-      padding-bottom: 40px;
-      text-align: center;
-      opacity: 0.6;
-      font-size: 0.8rem;
-      letter-spacing: 2px;
-    }
+    footer { margin-top: 80px; padding-bottom: 40px; text-align: center; opacity: 0.6; font-size: 0.8rem; letter-spacing: 2px; }
 
     @media (max-width: 768px) {
-      .new-jaguar-gif {
-        width: 300px;
-      }
-
-      .success-msg {
-        font-size: 2rem;
-      }
-
-      .mention-msg {
-        font-size: 1.1rem;
-      }
+      .new-jaguar-gif { width: 300px; margin-bottom: -10px; }
+      .success-msg { font-size: 2rem; }
+      .mention-msg { font-size: 1.1rem; }
     }
   </style>
 </head>
@@ -304,9 +278,9 @@
   <div class="container" id="main-content">
     <header>
       <h1 class="luxury-title">
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663690830635/pyZaNuDbtBKoVwoo.png" class="pulsing-star-img" alt="Estrela Luxo">
+        <img data-src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663690830635/pyZaNuDbtBKoVwoo.png" class="pulsing-star-img" alt="Estrela Luxo">
         LEH LELLIS
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663690830635/pyZaNuDbtBKoVwoo.png" class="pulsing-star-img" alt="Estrela Luxo">
+        <img data-src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663690830635/pyZaNuDbtBKoVwoo.png" class="pulsing-star-img" alt="Estrela Luxo">
       </h1>
       <p class="luxury-subtitle">TEZZA PROMPTS OFICIAL</p>
     </header>
@@ -318,10 +292,8 @@
       <div class="prompt-text">
         <pre id="prompt-content" style="white-space: pre-wrap; font-family: inherit; position: relative; z-index: 2;">
 
-          
 GEMINI   [MODO PRO]
-
-          
+         
 Ultra-realistic cinematic avatar 3D female portrait, Blender Cycles render in CGI, inspired by Seedream 5.0 beauty realism and high-end IMVU/The Sims virtual aesthetics. Clearly a fictional digital avatar and not a real photograph. Hyper-detailed virtual influencer design with stylized CGI beauty proportions, luxury editorial aesthetics, advanced cinematic lighting, ultra-polished 3D rendering, and “TEZZA PROMPTS” text at the bottom center in elegant minimalist typography.
 
 CAMERA & COMPOSITION
@@ -367,10 +339,8 @@ STYLE & RENDER QUALITY
 Ultra-photorealistic Blender Cycles CGI render, cinematic realism, Seedream 5.0 beauty rendering, 8K UHD quality, physically accurate lighting and materials, realistic skin micro-detail, IMVU-inspired beauty repaint style, high-fidelity feminine avatar rendering, realistic depth of field, glossy beauty aesthetic, polished virtual influencer atmosphere, advanced ray tracing, realistic reflections, luxury editorial lighting, ultra-clean cinematic render quality, and clearly fictional CGI avatar aesthetics instead of a real photograph.
 
           
-        
-
         </pre>
-        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663688238034/kPMgwnLeKRrnqvKC.png" class="jaguar-corner-img" alt="Jaguar">
+        <img data-src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663688238034/kPMgwnLeKRrnqvKC.png" class="jaguar-corner-img" alt="Jaguar">
       </div>
 
       <button class="copy-btn" onclick="startLuxuryTransition()">
@@ -386,7 +356,7 @@ Ultra-photorealistic Blender Cycles CGI render, cinematic realism, Seedream 5.0 
 
   <div class="jaguar-transition" id="transition-screen">
     <div class="transition-content">
-      <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663722024919/zEfgWEFKBczTyuOx.gif" class="new-jaguar-gif" id="jaguar-gif" alt="Jaguar Exclusive">
+      <img data-src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663722024919/zEfgWEFKBczTyuOx.gif" class="new-jaguar-gif" id="jaguar-gif" alt="Jaguar Exclusive">
       <div class="success-msg-container">
         <h2 class="success-msg">Prompt Copiado</h2>
         <p class="mention-msg">MARQUE @lellisvu_</p>
@@ -395,36 +365,34 @@ Ultra-photorealistic Blender Cycles CGI render, cinematic realism, Seedream 5.0 
   </div>
 
   <script>
+    window.onload = function() {
+      document.querySelectorAll('img[data-src]').forEach(img => {
+        img.src = img.getAttribute('data-src');
+      });
+    };
+
     function startLuxuryTransition() {
       const content = document.getElementById('main-content');
       const transition = document.getElementById('transition-screen');
       const jaguarImg = document.getElementById('jaguar-gif');
       const text = document.getElementById('prompt-content').innerText;
       
-      // Copia para o clipboard
       navigator.clipboard.writeText(text);
       
-      // Reinicia o GIF
       const gifSrc = jaguarImg.src;
       jaguarImg.src = '';
       jaguarImg.src = gifSrc;
 
-      // Mostra a tela de sucesso com opacidade total
       transition.style.display = 'flex';
       transition.style.opacity = '1';
       content.style.opacity = '0';
 
-      // Aguarda o ataque (6.5s)
       setTimeout(() => {
-        // Inicia o sumiço suave da tela de sucesso
         transition.style.opacity = '0';
-        
-        // Após o efeito de sumir (0.8s do CSS), esconde o elemento e volta o conteúdo principal
         setTimeout(() => {
           transition.style.display = 'none';
           content.style.opacity = '1';
         }, 800);
-        
       }, 6500);
     }
   </script>
