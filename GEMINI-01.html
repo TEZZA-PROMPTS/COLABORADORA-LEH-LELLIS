@@ -1,104 +1,322 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prompts by Tezza</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Configurações para link limpo (Instagram/Redes Sociais) -->
+  <title>LEH LELLIS • TEZZA PROMPTS</title>
+  <meta name="description" content="TEZZA PROMPTS OFICIAL">
+  
+  <!-- Open Graph / Facebook / Instagram -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="LEH LELLIS • TEZZA PROMPTS">
+  <meta property="og:description" content="TEZZA PROMPTS OFICIAL">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:title" content="LEH LELLIS • TEZZA PROMPTS">
+  <meta property="twitter:description" content="TEZZA PROMPTS OFICIAL">
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  
   <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0f0f0f;
-      color: #ffffff;
+    :root {
+      --gold-primary: #D4AF37;
+      --gold-light: #F9E498;
+      --gold-dark: #996515;
+      --bg-black: #0a0a0a;
+    }
+
+    @keyframes float-star {
+      0% { transform: translateY(0) scale(1); filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4)); }
+      50% { transform: translateY(-15px) scale(1.05); filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.7)); }
+      100% { transform: translateY(0) scale(1); filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4)); }
+    }
+
+    @keyframes jaguar-enter-right {
+      0% {
+        transform: translateX(150%) scaleX(-1);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(0) scaleX(-1);
+        opacity: 1;
+      }
+    }
+
+    .pulsing-star-img {
+      display: inline-block;
+      width: 60px;
+      height: auto;
+      margin: 0 10px;
+      vertical-align: middle;
+      animation: float-star 4s infinite ease-in-out;
+      mix-blend-mode: screen;
+      filter: brightness(1.1) contrast(1.1);
+    }
+
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
-    header {
-      padding: 30px 20px;
-      text-align: center;
-      border-bottom: 1px solid #222;
+
+    body {
+      background-color: var(--bg-black);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-      letter-spacing: 1px;
+
+    .bg-overlay {
+      position: fixed;
+      inset: 0;
+      background: 
+      linear-gradient(rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.85)),
+      url('https://i.pinimg.com/1200x/fe/93/a4/fe93a4ab6527400803f3f69a629b79f1.jpg') center/cover no-repeat fixed;
+      z-index: -2;
     }
-    header p {
-      margin-top: 10px;
-      color: #aaa;
-      font-size: 0.95rem;
+
+    .pattern-overlay {
+      position: fixed;
+      inset: 0;
+      background-image: url('https://www.transparenttextures.com/patterns/leopard.png');
+      opacity: 0.15;
+      z-index: -1;
+      pointer-events: none;
     }
+
     .container {
       max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    .prompt-box {
-      background: #151515;
-      border: 1px solid #262626;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 25px;
-    }
-    .prompt-title {
-      font-weight: bold;
-      margin-bottom: 10px;
-      font-size: 1.1rem;
-    }
-    pre {
-      white-space: pre-wrap;
-      word-wrap: break-word;
-      background: #0d0d0d;
-      padding: 15px;
-      border-radius: 8px;
-      border: 1px solid #222;
-      font-size: 0.9rem;
-      line-height: 1.4;
-      user-select: text;
-    }
-    button {
-      margin-top: 12px;
-      background: #ffffff;
-      color: #000000;
-      border: none;
-      padding: 10px 18px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    button:hover {
-      background: #e0e0e0;
-    }
-    .hint {
-      margin-top: 10px;
-      font-size: 0.8rem;
-      color: #888;
-    }
-    footer {
+      width: 100%;
+      padding: 80px 20px;
       text-align: center;
-      padding: 30px 20px;
+      position: relative;
+      transition: opacity 0.8s ease; /* Transição suave para o conteúdo principal */
+    }
+
+    .luxury-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 7vw, 4.2rem);
+      font-weight: 900;
+      color: var(--gold-primary);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      margin-bottom: 10px;
+      background: linear-gradient(to bottom, var(--gold-light), var(--gold-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .luxury-subtitle {
+      font-size: 1.1rem;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      color: #fff;
+      font-weight: 300;
+      opacity: 0.8;
+    }
+
+    .prompt-card {
+      background: rgba(153, 101, 21, 0.05); 
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      padding: 50px;
+      border-radius: 15px;
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6), inset 0 0 30px rgba(212, 175, 55, 0.1);
+      position: relative;
+      margin-top: 40px;
+    }
+
+    .prompt-text {
+      background: rgba(153, 101, 21, 0.1);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 30px;
+      color: #fff;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      min-height: 250px;
+      text-align: left;
+      font-weight: 300;
+      border-radius: 10px;
+      backdrop-filter: blur(15px);
+      box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.05);
+      position: relative;
+      overflow: hidden; 
+    }
+
+    .jaguar-corner-img {
+      position: absolute;
+      bottom: -110px;
+      right: -25px; 
+      width: 250px; 
+      height: auto;
+      pointer-events: none;
+      z-index: 5;
+      opacity: 0.95;
+      filter: drop-shadow(0 5px 15px rgba(0,0,0,0.8));
+    }
+
+    .copy-btn {
+      margin-top: 40px;
+      width: 100%;
+      background: linear-gradient(45deg, var(--gold-dark), var(--gold-primary), var(--gold-light), var(--gold-primary), var(--gold-dark));
+      background-size: 200% auto;
+      border: none;
+      color: #000;
+      padding: 20px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: 0.5s;
+      border-radius: 5px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    .copy-btn:hover {
+      background-position: right center;
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
+    }
+
+    /* TELA DE SUCESSO PERSISTENTE */
+    .jaguar-transition {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: #000; 
+      background-image: url('https://i.pinimg.com/1200x/fe/93/a4/fe93a4ab6527400803f3f69a629b79f1.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      transition: opacity 0.8s ease; /* Transição suave para sumir a tela de sucesso */
+    }
+
+    .jaguar-transition::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85); 
+      backdrop-filter: blur(25px) saturate(150%);
+      -webkit-backdrop-filter: blur(25px) saturate(150%);
+    }
+
+    .transition-content {
+      position: relative;
+      z-index: 10001;
+      text-align: center;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .new-jaguar-gif {
+      width: 450px;
+      height: auto;
+      animation: jaguar-enter-right 3.5s linear forwards;
+      margin-bottom: 30px;
+    }
+
+    .success-msg-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .success-msg {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      background: linear-gradient(to bottom, var(--gold-light), var(--gold-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+    }
+
+    .mention-msg {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-weight: 600;
+      background: linear-gradient(to bottom, var(--gold-light), var(--gold-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      opacity: 0.9;
+    }
+
+    footer {
+      margin-top: 80px;
+      padding-bottom: 40px;
+      text-align: center;
+      opacity: 0.6;
       font-size: 0.8rem;
-      color: #777;
-      border-top: 1px solid #222;
+      letter-spacing: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .new-jaguar-gif {
+        width: 300px;
+      }
+
+      .success-msg {
+        font-size: 2rem;
+      }
+
+      .mention-msg {
+        font-size: 1.1rem;
+      }
     }
   </style>
 </head>
-
 <body>
 
-<header>
-  <h1>Prompts by Tezza</h1>
-  <p>Página oficial para copiar prompts • Uso pessoal</p>
-</header>
+  <div class="bg-overlay"></div>
+  <div class="pattern-overlay"></div>
 
-<div class="container">
+  <div class="container" id="main-content">
+    <header>
+      <h1 class="luxury-title">
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663690830635/pyZaNuDbtBKoVwoo.png" class="pulsing-star-img" alt="Estrela Luxo">
+        LEH LELLIS
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663690830635/pyZaNuDbtBKoVwoo.png" class="pulsing-star-img" alt="Estrela Luxo">
+      </h1>
+      <p class="luxury-subtitle">TEZZA PROMPTS OFICIAL</p>
+    </header>
 
-  <div class="prompt-box">
-    <div class="prompt-title">TEZZA PROMPTS
-    COLABORADORA LEH LELLIS </div>
+    <main class="prompt-card">
+      <div style="text-align: left; margin-bottom: 20px; font-family: 'Playfair Display', serif; color: var(--gold-primary); font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase; border-left: 3px solid var(--gold-primary); padding-left: 15px; background: linear-gradient(to right, var(--gold-light), var(--gold-dark)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        LEH LELLIS COLABORADORA
+      </div>
+      <div class="prompt-text">
+        <pre id="prompt-content" style="white-space: pre-wrap; font-family: inherit; position: relative; z-index: 2;">
 
-<pre id="prompt1">(TEZZA PROMPTS)
-marque @tezza.vu @lellisvu_
+          
 GEMINI   [MODO PRO]
 
 
@@ -145,31 +363,66 @@ Luxury vacation aesthetic mixed with modern influencer culture, sophisticated re
 
 STYLE & RENDER QUALITY
 Ultra-photorealistic Blender Cycles CGI render, cinematic realism, Seedream 5.0 beauty rendering, 8K UHD quality, physically accurate lighting and materials, realistic skin micro-detail, IMVU-inspired beauty repaint style, high-fidelity feminine avatar rendering, realistic depth of field, glossy beauty aesthetic, polished virtual influencer atmosphere, advanced ray tracing, realistic reflections, luxury editorial lighting, ultra-clean cinematic render quality, and clearly fictional CGI avatar aesthetics instead of a real photograph.
-</pre>
 
-    <button onclick="copyFallback('prompt1')">Copiar Prompt</button>
-    <div class="hint">Se o botão não funcionar, selecione o texto e copie manualmente.</div>
+          
+        </pre>
+        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663688238034/kPMgwnLeKRrnqvKC.png" class="jaguar-corner-img" alt="Jaguar">
+      </div>
+
+      <button class="copy-btn" onclick="startLuxuryTransition()">
+        Copiar Prompt
+      </button>
+    </main>
+
+    <footer>
+      <p><a href="https://instagram.com/lellisvu_" style="color: var(--gold-primary); text-decoration: none; font-weight: 600;">MARQUE @lellisvu_</a></p>
+      <p style="margin-top: 10px;">LEH LELLIS • TEZZA PROMPTS — Conteúdo protegido.</p>
+    </footer>
   </div>
 
-</div>
+  <div class="jaguar-transition" id="transition-screen">
+    <div class="transition-content">
+      <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663722024919/zEfgWEFKBczTyuOx.gif" class="new-jaguar-gif" id="jaguar-gif" alt="Jaguar Exclusive">
+      <div class="success-msg-container">
+        <h2 class="success-msg">Prompt Copiado</h2>
+        <p class="mention-msg">MARQUE @lellisvu_</p>
+      </div>
+    </div>
+  </div>
 
-<footer>
-  © Prompts by Tezza — Conteúdo protegido. Não redistribuir.
-</footer>
+  <script>
+    function startLuxuryTransition() {
+      const content = document.getElementById('main-content');
+      const transition = document.getElementById('transition-screen');
+      const jaguarImg = document.getElementById('jaguar-gif');
+      const text = document.getElementById('prompt-content').innerText;
+      
+      // Copia para o clipboard
+      navigator.clipboard.writeText(text);
+      
+      // Reinicia o GIF
+      const gifSrc = jaguarImg.src;
+      jaguarImg.src = '';
+      jaguarImg.src = gifSrc;
 
-<script>
-  function copyFallback(id) {
-    const el = document.getElementById(id);
-    const range = document.createRange();
-    range.selectNodeContents(el);
-    const selection = window.getSelection();
-    selection.removeAllRanges();
-    selection.addRange(range);
-    document.execCommand('copy');
-    selection.removeAllRanges();
-    alert('Prompt copiado!');
-  }
-</script>
+      // Mostra a tela de sucesso com opacidade total
+      transition.style.display = 'flex';
+      transition.style.opacity = '1';
+      content.style.opacity = '0';
 
+      // Aguarda o ataque (6.5s)
+      setTimeout(() => {
+        // Inicia o sumiço suave da tela de sucesso
+        transition.style.opacity = '0';
+        
+        // Após o efeito de sumir (0.8s do CSS), esconde o elemento e volta o conteúdo principal
+        setTimeout(() => {
+          transition.style.display = 'none';
+          content.style.opacity = '1';
+        }, 800);
+        
+      }, 6500);
+    }
+  </script>
 </body>
 </html>
